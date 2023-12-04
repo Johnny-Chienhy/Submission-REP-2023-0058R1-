@@ -1,0 +1,40 @@
+Title: Model D UK health data 2005 to 2008 LS on ghq;
+
+Data: File is UK_selected0114.dat;  !data from British Household Panel Survey(BHPS) that met research purpose.
+      
+Variable: 
+
+      NAMEs = id age female stroke stroke05 disabled disabled05 over65 
+        ghq04 ghq05 ghq06 ghq07 ghq08 ghq09
+        sat04 sat05 sat06 sat07 sat08 sat09
+        sever04 sever05 sever06 sever07 sever08 sever09 ; ! variables in the data set.
+MISSING=.;
+
+     usevariables are sat05 sat06 sat07 sat08 ghq05 ghq06 ghq07 ghq08
+     over65 female disabled05 stroke05; !varaible used for the analysis.
+      
+
+Analysis:
+estimator = ML;
+
+model: 
+i_ghq s_ghq| ghq05@0 ghq06@1 ghq07@2 ghq08@3; !modeling latent growth model for GHQ12.
+
+i_sat s_sat| sat05@0 sat06@1 sat07@2 sat08@3; !modeling latent growth mdoel for Life statisfaction.
+
+i_sat on i_ghq over65 female disabled05 stroke05; !intercept of life statisfaction predicted by ghq, controling for demographic varables.
+s_sat on i_ghq s_ghq over65 female disabled05 stroke05; !slope of life satisfaction predicted by ghq, controling for demographic varables.
+i_ghq on over65 female disabled05 stroke05; !demographic varaible as covariate
+s_ghq on over65 female disabled05 stroke05; !demographic varaible as covariate
+
+ghq05 with sat05; !correlated residuals. 
+ghq06 with sat06;
+ghq07 with sat07;
+ghq08 with sat08;
+
+i_ghq with s_ghq;
+i_sat with s_sat;
+
+output: mod(4) standardized; !getting output
+SAVEDATA: file is finaldata.dat; !save the factor score.
+SAVE = fscores;
