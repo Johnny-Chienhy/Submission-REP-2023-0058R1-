@@ -1,0 +1,29 @@
+Data Dictionary for UK_selected0114.dat
+This dataset is a subset extracted from the British Household Panel Survey (BHPS) covering the years 2005 to 2008. The variables included in this subset are:
+
+id: Participant identifier.
+age: Age of the participant.
+female: Gender of the participant. 0 denotes male, and 1 denotes female.
+stroke: Binary indicator where 0 represents no history of stroke, and 1 indicates the participant experienced a stroke.
+stroke05: Binary indicator where 0 denotes the absence of a stroke in 2005, and 1 denotes the presence of a stroke in 2005.
+disabled: Binary indicator where 0 represents no diagnosed disability, and 1 indicates a diagnosed disability.
+disabled05: Binary indicator where 0 denotes the absence of a diagnosed disability in 2005, and 1 denotes the presence of a diagnosed disability in 2005.
+over65: Binary indicator where 0 denotes the participant was not over 65 years old in 2005, and 1 denotes the participant was over 65 years old in 2005.
+ghq04: Score of General Health Questionnaire 12 (GHQ12) in 2004.
+ghq05: Score of GHQ12 in 2005.
+ghq06: Score of GHQ12 in 2006.
+ghq07: Score of GHQ12 in 2007.
+ghq08: Score of GHQ12 in 2008.
+ghq09: Score of GHQ12 in 2009.
+sat04: Life satisfaction score in 2004.
+sat05: Life satisfaction score in 2005.
+sat06: Life satisfaction score in 2006.
+sat07: Life satisfaction score in 2007.
+sat08: Life satisfaction score in 2008.
+sat09: Life satisfaction score in 2009.
+sever04: Participant-reported severe health problems in 2004.
+sever05: Participant-reported severe health problems in 2005.
+sever06: Participant-reported severe health problems in 2006.
+sever07: Participant-reported severe health problems in 2007.
+sever08: Participant-reported severe health problems in 2008.
+sever09: Participant-reported severe health problems in 2009.
